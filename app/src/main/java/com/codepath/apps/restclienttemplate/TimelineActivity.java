@@ -21,6 +21,7 @@ import okhttp3.Headers;
 public class TimelineActivity extends AppCompatActivity {
 
     public static final String TAG = "TimelineActivity";
+
     TwitterClient client;
     RecyclerView rvTweets;
     List<Tweet> tweets;
@@ -49,7 +50,7 @@ public class TimelineActivity extends AppCompatActivity {
         client.getHomeTimeline(new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
-                Log.i(TAG,"onSuccess");
+                Log.i(TAG,"onSuccess" + json.toString());
                 JSONArray jsonArray = json.jsonArray;
                 try {
                    tweets.addAll(Tweet.fromJsonArray(jsonArray));
