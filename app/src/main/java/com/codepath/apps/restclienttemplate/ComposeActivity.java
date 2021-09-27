@@ -57,10 +57,12 @@ public class ComposeActivity extends AppCompatActivity {
                     counter--;
                 }
                     if(counter<=MAX_TWEET_LENGTH) {
+                        btnTweet.setEnabled(true);
                         tvCount.setTextColor(Color.rgb(0, 0, 0));
                         tvCount.setText(counter + "/" + MAX_TWEET_LENGTH);
                     }
                     else{
+                        btnTweet.setEnabled(true);
                     tvCount.setTextColor(Color.rgb(255, 0, 0));
                     tvCount.setText(MAX_TWEET_LENGTH - counter + "/" + MAX_TWEET_LENGTH);
                 }
